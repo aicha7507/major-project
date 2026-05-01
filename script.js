@@ -125,12 +125,14 @@ async function getRecipeDetails(id) {
     let data = await response.json();
     let meal = data.meals[0];
 
-    detailsDiv.innerHTML = `
-      <h2>${meal.strMeal}</h2>
-      <img src="${meal.strMealThumb}">
-      <p><strong>Instructions:</strong></p>
-      <p>${meal.strInstructions}</p>
-    `;
+   detailsDiv.innerHTML = `
+  <h2>${meal.strMeal}</h2>
+  <img src="${meal.strMealThumb}">
+  <p><strong>Instructions:</strong></p>
+  <p>${meal.strInstructions}</p>
+`;
+
+detailsDiv.scrollIntoView({ behavior: "smooth" });
 
   } catch (error) {
     console.log(error);
